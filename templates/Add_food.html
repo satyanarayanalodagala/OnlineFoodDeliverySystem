@@ -1,0 +1,46 @@
+{% extends 'resturentnavbar.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD Food</title>
+</head>
+<body>
+{% block body %}
+
+<h1 align="center">ADD FOODS</h1>
+<form method="POST" action="{% url 'Add_food1' %}" style="margin-left: 25%;" enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label  class="form-label"> <b>CATEGORY NAME</b></label>
+    <input type="text" class="form-control" style="width:65%" name="category" placeholder="Category" >
+  </div>
+  <div class="mb-3">
+    <label  class="form-label"> <b>FOOD NAME</b></label>
+    <input type="text" class="form-control" style="width:65%" name="name" placeholder="Name" >
+  </div>
+   <div class="mb-3">
+    <label   style="" class="form-label"><b>REGION</b></label>
+    <input type="text" class="form-control" style="width:65%" name="region" placeholder="region" >
+  </div>
+
+    <input type="radio" id="veg" name="VEG"  value="VEG">
+  <label for="veg">VEG</label><br>
+  <input type="radio" id="nonveg" name="VEG"  value="NONVEG">
+  <label for="nonveg">NON-VEG</label><br>
+  </div>
+   <div class="mb-3">
+    <label  class="form-label"><b>PRICE</b></label>
+    <input type="text" class="form-control" name="price" style="width:65%" placeholder="price" >
+  </div>
+   <div class="form-group col-md-6">
+            <label><b>Item-Picture</b></label>
+            <input type="file" class="form-control" name="image" style="width:130%" id="image" placeholder="Enter Last Name">
+   </div>
+<br>
+  <button  style="margin-left: 31%;" type="submit" class="btn btn-primary">ADDFOOD</button>
+</div>
+</form>
+
+{% endblock %}
+</body>
+</html>

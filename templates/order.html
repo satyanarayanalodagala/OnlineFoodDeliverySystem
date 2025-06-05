@@ -1,0 +1,37 @@
+{% extends 'userhomepagenavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Include Bootstrap CSS link here if not already included -->
+</head>
+<body>
+
+{% block body %}
+<div class="row" align="center">
+    {% for i in food %}
+    <div class="col-md-3">
+        <div class="card" style="width: 40rem; margin-left: 115%;">
+            <p> <b>Res:</b>{{i.user}}</p>
+            <img class="md-3" src="{{ i.image.url }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.Name }}</h5>
+                <p class="card-text"></p>
+                <p class="card-text">{{i.region}}</p>
+                <p> <b>Type: </b>{{i.vnv}}</p>
+                <p class="card-text"> RS:{{i.cost}}</p>
+                <form method="post" action="order1/{{i.id}}">
+                    {% csrf_token %}
+                    <input type="number"  name="count" placeholder="Quantity"><br>
+                    <button type="submit" class="btn btn-success">ADD TO CART</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+<!-- Include Bootstrap JS and other scripts here if needed -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'userhomepagenavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Include Bootstrap CSS link here if not already included -->
+</head>
+<body>
+
+{% block body %}
+<div class="container mt-4">
+<table id="example" class="table table-hover" style="width:100%">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+             <th>Resturent Name</th>
+            <th>Type</th>
+
+            <th>TYPE</th>
+            <th>PRICE</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for i in food %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+              <td>{{i.res.RestName}}</td>
+            <td>{{ i.food.Name }}</td>
+            <td>{{i.food.vnv}}</td>
+            <td>RS:{{i.food.cost}}</td>
+
+            <td><a href="" class="btn btn-danger">ORDERD</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<!-- Include Bootstrap JS and other scripts here if needed -->
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,112 @@
+body {
+
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.back{
+background-image: url("../images/background7.jpg");
+}
+.Admin{
+background-image: url("../images/background7.jpg");
+background-color:red;
+}
+
+
+.ram{
+background-image: url("../images/background8.jpg");
+background-repeat: no-repeat;
+   background-size: cover;
+    opacity: 1;
+height:90vh;
+}
+.ram1{
+background-image: url("../images/background9.jpg");
+background-repeat: no-repeat;
+   background-size: cover;
+    opacity: 1;
+height:90vh;
+}
+.back1{
+background-image: url("../images/back123.jpg");
+background-color:red;
+background-repeat: no-repeat;
+   background-size: cover;
+    opacity: 1;
+height:100vh;
+}
+ .ani {
+  width: 235px;
+  height: 170px;
+  border-radius: 100px;
+ background-image: url("../images/order1.jpg");
+  position: relative;
+  animation-name: example;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0%   { left:0px; top:0px;}
+  25%  { left:1300px; top:0px;}
+  50%  {left:1200px; top:300px;}
+  75%  { left:0px; top:200px;}
+  100% {left:0px; top:0px;}
+
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+.vid{
+background{
+<video style="width: 100%;height: 232%;" autoplay muted loop id="myVideo">
+  <source src="" type="video/mp4">
+</video>
+}
+
+}
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}

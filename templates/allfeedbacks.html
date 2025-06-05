@@ -1,0 +1,34 @@
+{% extends 'adminnavbar.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<body>
+<h2 align="center"><u>FEEDBACK FORMS</u></h2>
+<div class="row">
+    {% for i in feeds %}
+    <div class="col-md-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Username:</b>   {{ i.usname }}</h5>
+                <p class="card-text"><b>EMAIL:</b>   {{i.mail}}</p>
+                <p>  <b>Contact:</b>   {{i.cont}}</p>
+                <p> <b>MESSAGE:</b>   {{i.mess}}</p>
+<!--                <div class="input-group mb-3">-->
+<!--                    <input type="text" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon2" id="quantity{{ i.id }}">-->
+<!--                    <div class="input-group-append">-->
+<!--                        <button class="btn btn-outline-secondary" type="button" onclick="incrementQuantity('{{ i.id }}')">+</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+{% endblock %}
+</html>

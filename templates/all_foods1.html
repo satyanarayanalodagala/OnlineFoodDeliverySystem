@@ -1,0 +1,39 @@
+{% extends 'userhomepagenavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Include Bootstrap CSS link here if not already included -->
+</head>
+<body>
+
+{% block body %}
+<div class="row">
+    {% for i in allfoods %}
+    <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+            <img class="md-3" src="{{ i.image.url }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.Name }}</h5>
+                <p class="card-text"></p>
+                <p class="card-text">{{i.region}}</p>
+                <p> <b>Type: </b>{{i.vnv}}</p>
+                <p> <b>Price: </b>{{i.cost}} Rs</p>
+<!--                <div class="input-group mb-3">-->
+<!--                    <input type="text" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon2" id="quantity{{ i.id }}">-->
+<!--                    <div class="input-group-append">-->
+<!--                        <button class="btn btn-outline-secondary" type="button" onclick="incrementQuantity('{{ i.id }}')">+</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#"  class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+<!-- Include Bootstrap JS and other scripts here if needed -->
+</body>
+</html>

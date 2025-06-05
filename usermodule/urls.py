@@ -1,0 +1,53 @@
+from django.contrib import admin
+from django.urls import path
+from . import views
+urlpatterns = [
+ path('',views.homepage,name='homepage'),
+ path('user', views.user, name='user'),
+ path('rest', views.rest, name='rest'),
+ path('agent', views.agent, name='agent'),
+ path('admins', views.admin, name='admin'),
+ path('user_login', views.user_login, name='user_login'),
+ path('admin_login', views.admin_login, name='admin_login'),
+ path('resturent_login',views.resturent_login,name='resturent_login'),
+ path('employe_login', views.employe_login, name='employe_login'),
+ path('Add_food', views.Add_food, name='Add_food'),
+ path('Add_food1', views.Add_food1, name='Add_food1'),
+ path('all_foods', views.all_foods, name='all_foods'),
+ path('orderfoods', views.all_foods1, name='all_foods1'),
+ path('all_restuarents', views.all_restuarents, name='all_restuarents'),
+ path('all_Resfoods', views.all_Resfoods, name='all_Resfoods'),
+ path('deletefood',views.deletefood,name='deletefood'),
+ path('contactus',views.contactus,name='contactus'),
+ path('sent',views.sent,name='sent'),
+
+ path('feedbacks', views.feedbacks, name='feedbacks'),
+
+ path('user_signup', views.user_signup, name='user_signup'),
+ path('rest_signup', views.rest_signup, name='rest_signup'),
+ path('emp_signup', views.emp_signup, name='emp_signup'),
+ path('logouts', views.logouts, name='logouts'),
+ path('userhomepage',views.userhomepage,name='userhomepage'),
+ path('employehomepage',views.employehomepage,name='employehomepage'),
+ path('resturenthomepage',views.resturenthomepage,name='resturenthomepage'),
+ path('adminhomepage',views.adminhomepage,name='adminhomepage'),
+ path("ad_resturents/", views.ad_resturents, name="ad_resturents"),
+ path("ad_Agents/", views.ad_Agents, name="ad_Agents"),
+ path("ad_Users/", views.ad_Users, name="ad_Users"),
+ path('order/<int:pk>',views.order,name="order"),
+ path('orders',views.orders,name="orders"),
+ path('history',views.history,name="history"),
+path('all_orders',views.all_orders,name="all_orders"),
+
+ path('restorder', views.restorder, name="restorder"),
+
+ path('refood/order/<int:pk>', views.order, name="order"),
+ path('order/order1/<int:pk>', views.order1, name="order1"),
+ path('refood/order/order1/<int:pk>', views.order1, name="order1"),
+ # path('refood/order/order1/order1/<int:pk>', views.orderdel, name="order1"),
+ path('refood/<int:pk>', views.refood, name='refood'),
+ path('orderplaced',views.orderplaced,name='orderplaced'),
+ # path('refood/order/<int:pk>', views.order2, name="order1"),
+ path('placeorder',views.placeorder,name="placeorder"),
+ path('back', views.back, name='back'),
+]

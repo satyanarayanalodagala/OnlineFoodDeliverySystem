@@ -1,0 +1,46 @@
+{% extends 'userhomepagenavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block body %}
+<h1 align="center" >CART</h1>
+<div class="row" align="center">
+    {% for i in food %}
+    <div class="col-md-3">
+        <div class="card" style="width: 15rem;" >
+            <p> <b>Restauraunt:</b>{{i.res.RestName}}</p>
+            <img class="md-3" src="{{ i.food.image.url }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">FOOD TYPE: {{ i.food.Name }}</h5>
+                <p class="card-text"></p>
+                <p> <b>VEG/NONVEG: </b>{{i.food.vnv}}</p>
+                <p class="card-text">1 X Quantity: {{i.food.cost}} Rs</p>
+                <p class="card-text">Required Quantity: {{i.quantity}}</p>
+                 <p class="card-text">TOTAL COST: {{i.quantity}}</p>
+                <form method="post" action="order1/{{i.id}}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Added</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <h1>Total Cost : {{totcost}}</h1>
+    <h1>Total Count : {{noitems}}</h1>
+    <form method="post" action="{% url 'orderplaced' %}">
+        {% csrf_token %}
+            <button type="submit" class="btn btn-success">PLACE ORDER</button>
+
+    </form>
+
+</div>
+{% endblock %}
+
+<!-- Include Bootstrap JS and other scripts here if needed -->
+</body>
+</html>
